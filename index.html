@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta charset="8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <title>HOME</title>
+        <script src="Effects.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Geostar|Geostar+Fill|Londrina+Shadow|Teko&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    </head>
+    <body>
+<!--NAVIGATION BAR-->
+        <div class="navigation" >
+            <div style="float: left;justify-items: center;">
+                <a href="#" style="font-size: 40px;color:initial; color:rgb(0, 77, 152); font-style: italic" class="nav-icon heading">Electriquiped</a>
+                <a  class="nav-icon" href="index.html" id="home" role="button" onmouseover="change_Colorr('home','rgb(0, 77, 152)')" onmouseout="change_Colorr('home','black')"><i class="fas fa-home fa-2x"></i></a>
+                <a class="nav-icon" id="input" href="input.html" role="button" onmouseover="change_Colorr('input','rgb(255, 171, 0)')" onmouseout="change_Colorr('input','black')"><i class="fas fa-edit fa-2x"></i></a>
+                <a href="#" style="font-size: 20px;color:initial; color:rgb(0, 77, 152); font-style: italic;" class="nav-icon heading">For your electric saving needs</a>
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+<!--INFO-->
+        <div class="info">
+<!--INFORMATION-->
+            <header class="info-text normal" style="font-size: 20px; overflow-y: scroll;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quo cumque corrupti ipsa, laboriosam fugit unde beatae debitis nemo, veniam laborum doloremque quas tempore ipsum quasi vel, ut odio. Facilis!
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi quam asperiores, iusto magni fuga illum, hic impedit facilis vero odio, porro cupiditate! Earum minima nam quidem cumque ut vitae iusto.
+            </header> 
+            <div style="border-right:4px solid black;" class="center"></div>
+<!--CAROSEL-->
+            <div class="info-img" style="align-self: center">
+                <i class="fas fa-chevron-left prev fa-2x center" id="prev" onclick="prev();" onmouseover="change_Colorr('prev','rgb(0, 77, 152)')" onmouseout="change_Colorr('prev','black')" ></i>
+                <img src="dpl-vampire-appliances.jpg" class="img info-img-img " style="width: 50%; height: 150px;" alt="0">
+                <img src="16559855_303.jpg" class="img  info-img-img" style="display: none;height: 150px;width: 50%" alt="1">
+                <img src="PAFF_020718_airpollution-609x419.jpg" class="img info-img-img" style="display: none;height: 150px;width: 50%" alt="2">
+                <i class="fas fa-chevron-right next fa-2x center" id="next" onclick="next();" onmouseover="change_Colorr('next','rgb(0, 77, 152)')" onmouseout="change_Colorr('next','black')"></i>
+            </div>
+        </div>
+        <div class="info" style="flex-direction: column">
+            <header style="text-align: center; font-size: 20px" class="center normal">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis iusto nam soluta illum officiis. Cupiditate eum, mollitia harum temporibus natus soluta? Eos error reiciendis fugiat aspernatur deleniti in rerum maxime.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim explicabo laudantium, porro deserunt blanditiis quidem totam facilis magni sed officiis eos quis eum, necessitatibus tempora nisi? Accusamus, ullam magnam?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, minus incidunt, unde aliquid tenetur doloremque expedita corrupti iusto tempora, a nobis voluptatum corporis! Quis perspiciatis magni molestias debitis ad laboriosam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam temporibus velit quia voluptatem perspiciatis, consequuntur, officiis repudiandae nisi ullam corporis distinctio. Ab nobis illo ea alias omnis ullam tempore inventore.
+
+            </header>
+            <div style="border-top:4px solid black; margin-left: 100px;margin-right: 100px" ></div>
+            <a class="nav-icon center " id="input1" href="input.html" role="button" onmouseover="change_Colorr('input1','rgb(0, 77, 152)')" onmouseout="change_Colorr('input1','black')" style="align-self: center"><i class="fas fa-edit fa-3x"></i></a>
+        </div>
+        <br>
+        <br>
+        
+    </body>
+    <footer>
+<!--FOOTER-->
+            <div class="footer" style="left:0; right:0">
+                <div style="align-self: center; margin-top: 5px;">
+                    <span class="Heading" style="font-size: 40px">MADE BY :</span>
+                </div>
+                <div style="align-self: center" class="name">
+                    <a href="#" style="font-size:20px ;width: initial;color:initial" class="container highlights">ĐỖ THANH THANH BÌNH</a>
+                </div>
+                <div class="row-con center" >
+                    <a onmouseover="change_Colorr('facebook','blue')" onmouseout="change_Colorr('facebook','black')" href="https://www.facebook.com/" role="button" id="facebook"  ><i class="fab fa-facebook-square fa-2x"></i></a>
+                    <a  onmouseover="change_Colorr('youtube','red')" onmouseout="change_Colorr('youtube','black')" href="https://www.youtube.com/" role="button" style="margin-left: 30px" id="youtube"><i class="fab fa-youtube fa-2x"></i></a>
+                    <a  onmouseover="change_Colorr('twitter','blue')" onmouseout="change_Colorr('twitter','black')" href="https://twitter.com/" role="button" style="margin-left: 30px" id="twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                </div>
+            </div>
+        </footer>
+</html>

@@ -1,0 +1,182 @@
+/*NAVIGATION BAR*/
+.navigation {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    width: 100% ;
+    height: 100px;
+    align-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+    flex-direction: row;
+    background: rgba(255, 219, 80,0.5);
+    box-shadow: 0px 4px;
+}
+.nav-icon {
+    margin-left: 30px;
+}
+/*CENTER*/
+.center {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/*HOVER EFFECT*/
+.invert :hover {
+    filter: invert(1);
+}
+
+/*CONTENT*/
+.info {
+    display: flex;
+    margin-left:30px;
+    margin-right:30px;
+    background-color:rgb(255, 219, 80);
+    flex-direction: row;
+    margin-bottom: 30px;
+    justify-content: center;
+
+}
+.info-text {
+    display:flex;
+    text-align: center;
+    width: 50%;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    left:0;
+}
+.info-img {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 50%;
+    right: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+/*.info-img-img {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+
+}*/
+.prev {
+    position: relative;
+    left: 0;
+    align-self: center;
+    display: block;
+
+    
+}
+.next {
+    position: relative;
+    right: 0;
+    align-self: center;
+    display: block;
+}
+/*MIDDLE SQUARE*/
+.output-box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-flow: wrap;
+}
+
+/*FOOTER*/
+.footer {
+    background-color: rgb(255, 171, 0);
+    display: flex;
+    bottom: 0;
+    width: 100% ;
+    flex-direction: column;
+    align-content: space-between;
+    position: static;
+
+}
+.row-con {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content : center;
+}
+/*BUTTON*/
+.button{
+    background-color: rgb(14, 38, 106);
+    border: 2px solid rgb(14, 38, 106);
+    padding: 15px 32px;
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    color: white;
+}
+.button:hover {
+    background-color: white;
+    font-family: 'Teko', sans-serif;
+    color:rgb(14, 38, 106);
+}
+.button_invi_click{
+    background-color:rgb(255, 219, 80);
+    border: 2px solid rgb(255, 219, 80);
+    padding: 15px 32px;
+    text-align: center;
+    color: black;
+}
+.button_invi{
+    background-color: white;
+    border: 2px solid rgb(255, 219, 80);
+    padding: 15px 32px;
+    text-align: center;
+    color: black;
+}
+
+/*FONTS*/
+.heading {
+    font-family: 'Anton', sans-serif;
+    color:rgb(0, 77, 152);
+
+}
+.normal {
+    font-family: 'Teko', sans-serif;
+    color: rgb(1, 20, 65);
+}
+.highlights {
+    font-family: 'Alfa Slab One', cursive;}
+
+.money {
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 300px;
+}
+/*LINK SETTINGS*/
+a:link {
+    text-decoration: none;
+}
+  /* visited link */
+a:visited {
+    color: initial;
+    text-decoration: none;
+}
+
+  /* mouse over link */
+a:hover {
+    text-decoration: none;
+    
+}
+
+  /* selected link */
+a:active {
+    color: inital;
+    text-decoration: none;
+}
+button:visited {
+    border: initial;
+}
+body {
+    background-color: rgb(104, 177, 251,0.3);
+}
