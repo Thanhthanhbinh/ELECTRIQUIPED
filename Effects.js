@@ -179,9 +179,9 @@ function thousands_separators(num){
 }
 //SHOW MONEY
 function savings() {
-    var money= JSON.parse(sessionStorage.getItem("money"));
+    var money= JSON.parse(sessionStorage.getItem("kWh"));
     var two=money;
-    two=money*7.4570586;
+    two=money*0.815400000;
     window.sessionStorage.setItem("carbon",JSON.stringify(two));
     var three=document.getElementById('carbon');
     two=Math.round(two);
