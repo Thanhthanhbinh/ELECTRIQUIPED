@@ -5,6 +5,8 @@ var expendables=["Television", "Lights", "Computer", "Fan", "Water Heater"];
 var saved_items=[{name:'Television',hours:3},{name:'Lights',hours:3}, {name:'Computer',hours:3},{name:'Fan',hours:3}, {name:'Water Heater',hours:3}];
 var save_txt="";
 var ap=[];
+
+
 //CHANGE COLOR OF A INTO COLOR B
 function change_Colorr(a,b) {
     var ele=document.getElementById(a);
@@ -48,19 +50,18 @@ function prev() {
         two.style.display="block";
     }
 }
+
 //ADDING MORE APPLIANCES
 function add() {
-    var four=document.getElementById('inputt').innerHTML;
     var three=document.getElementById('form');
-    three.innerHTML+=four;
-    var one=document.getElementsByClassName('plush');
-    var two=document.getElementsByClassName('minus');
-    //one.parentNode.removeChild(one);
-    //two.parentNode.removeChild(two);
-    one[one.length-3].style.display='none';
-    two[two.length-3].style.display='none';
-    var one=document.getElementsByClassName('plush');
-    var two=document.getElementsByClassName('minus');
+    var four=document.getElementsByClassName('inputt');
+    var five=four[four.length-1].cloneNode(true);
+    three.appendChild(five);
+    var one=document.getElementsByClassName("inputt");
+    one[one.length-2].style.display="block";
+    var four=document.getElementsByClassName('minus');
+    four[four.length-2].style.display='none';
+
 }
 //REMOVING MORE APPLIANCES
 function delet() {
@@ -71,7 +72,9 @@ function delet() {
         var three=document.getElementsByClassName('plush');
         var four=document.getElementsByClassName('minus');
         three[three.length-2].style.display='block';
-        four[four.length-2].style.display='block';
+        if (one.length!=2){
+            four[four.length-2].style.display='none';
+        }
     }
 }
 //SHOWING NUMBER OF APPLIANCES
@@ -103,30 +106,58 @@ function setup() {
     var listA=[];
     var listP=[];
     var listH=[];
+    var listN=[];
     var list=[];
+    var check=0;
     var four=document.getElementById('days_in').value;
+    if(four==0) {
+        check=1;
+    }
     var one=document.getElementsByClassName('appliances');
     for (k=0;k<one.length-1;k++) {
     listA[k]=one[k].options[one[k].selectedIndex].value;
+    if(listA[k]=="") {
+        check=1;
+    }
     }
     var two=document.getElementsByClassName('power');
     for (k=0;k<two.length-1;k++) {
         listP[k]=two[k].value;
+        if(listP[k]==0) {
+            check=1;
+        }
     }
     var three=document.getElementsByClassName('hours');
     for (k=0;k<three.length-1;k++) {
         listH[k]=three[k].value;
+        if(listH[k]==0) {
+            check=1;
+        }
     }    
+    var five=document.getElementsByClassName('number');
+    for (k=0;k<five.length-1;k++) {
+        listN[k]=five[k].value;
+        if(listN[k]==0) {
+            check=1;
+        }
+    }
     for (k=0;k<one.length-1;k++) {
         var obj ={
             appliance:listA[k],
             power:listP[k],
             hours:listH[k],
+            number:listN[k],
         };
         list.push(obj);
     }
     window.sessionStorage.setItem("list",JSON.stringify(list));
     window.sessionStorage.setItem("days",JSON.stringify(four));
+    if(check==0) {
+        window.location.href="output.html";
+    } else {
+        alert("You missed a few inputs!");
+    }
+
 }
 //CALCULATING MONEY
 function calculate() {
@@ -136,7 +167,7 @@ function calculate() {
     var list= JSON.parse(sessionStorage.getItem("list"));
     var days= JSON.parse(sessionStorage.getItem("days"));
     for (k=0;k<list.length; k++) {
-        kWh+=list[k].power*list[k].hours;
+        kWh+=list[k].power*list[k].hours*list[k].number;
     }
     kWh=kWh*days;
     window.sessionStorage.setItem("kWh",JSON.stringify(kWh));
@@ -188,6 +219,7 @@ function savings() {
     two=thousands_separators(two);
     three.innerHTML=two;
     var one=document.getElementById("number");
+    var money= JSON.parse(sessionStorage.getItem("money"));
     money=thousands_separators(money);
     one.innerHTML=money;
 }

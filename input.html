@@ -46,7 +46,7 @@
                 <form class="list_form ">
                     <div class="row-con" id="container-form" style="margin-left: 30px;margin-right: 30px">
                         <div style="align-self:center">
-                            <header class="normal">APPLIANCES: </header>
+                            <header class="normal" style="align-self: center; margin-left: 30px">APPLIANCES: </header>
                         </div>
                         <select class="center button appliances" name="appliances" >
                             <option >Blending </option>
@@ -71,7 +71,7 @@
                             <option >Light</option>
                             <option >Others</option>
                         </select>
-                        <div style="align-self: center; margin-left: 100px">
+                        <div style="align-self: center; margin-left: 10px">
                             <header class="normal">POWER: </header>
                         </div>
                         <div style="align-self: center;margin-right: 10px" class="center" >
@@ -80,7 +80,7 @@
                         <div style="align-self: center" style="margin-left: 10px">
                             <header class="normal">kW </header>
                         </div>
-                        <div style="align-self: center; margin-left: 100px">
+                        <div style="align-self: center; margin-left: 50px">
                             <header class="normal">USAGE: </header>
                         </div>
                         <div style="align-self: center;margin-right: 10px" class="center" >
@@ -89,7 +89,16 @@
                         <div style="align-self: center" style="margin-left: 10px">
                             <header class="normal">hours </header>
                         </div>
-                        <i id="plush" class="fas fa-plus-square center fa-3x plush invert" style="align-self: center;margin-left: 100px" onclick="add();number()"></i>
+                        <div style="align-self: center; margin-left: 50px">
+                            <header class="normal">NUMBER: </header>
+                        </div>
+                        <div style="align-self: center;margin-right: 10px" class="center" >
+                            <input id="test" name="number" class="normal number" type="number" style="height: 65px; width: 70px;" min="1">
+                        </div>
+                        <div style="align-self: center" style="margin-left: 10px">
+                            <header class="normal">appliance(s) </header>
+                        </div>
+                        <i id="plush" class="fas fa-plus-square center fa-3x plush invert" style="align-self: center;margin-left: 50px" onclick="add();number()"></i>
                         <i id='minus' class="fas fa-minus-square center fa-3x minus invert" style="align-self: center;margin-left: 10px" onclick="delet();number()"></i>
                     </div>
                 </form>
@@ -97,7 +106,7 @@
         </div>
 <!--DAYS-->
         <div class="info" id="days" style="display: none;">
-            <div style="align-self: center; margin-left: 100px">
+            <div style="align-self: center; margin-left: 50px">
                 <header class="normal">DAYS: </header>
             </div>
             <div style="align-self: center;margin-right: 10px" class="center" >
@@ -109,14 +118,14 @@
         </div>
 <!--SUMMIT-->
 <div class="info" style="background-color: white">
-    <button class="button " onclick="location.href='output.html';setup()"style=" width:100%" >SUMMIT</button>
+    <button class="button " onclick="setup()" style=" width:100%" >SUMMIT</button>
 </div>
 <!--TEMPLATE-->
-        <div  id="inputt" style="display: none">
+        <div  id="inputt" style="display: none" class="inputt">
             <form class="list_form ">
-                <div class="row-con center" id="container-form">
-                    <div style="align-self:center">
-                        <header class="normal">APPLIANCES: </header>
+                <div class="row-con center indi_form" id="container-form">
+                    <div style="align-self:center" >
+                        <header class="normal"style="align-self: center; margin-left: 30px">APPLIANCES: </header>
                     </div>
                     <select class="center button  appliances" name="appliances">
                             <option >Blending </option>
@@ -142,7 +151,7 @@
                             <option >Others</option>
 
                     </select>
-                    <div style="align-self: center; margin-left: 100px">
+                    <div style="align-self: center; margin-left: 10px">
                         <header class="normal">POWER: </header>
                     </div>
                     <div style="align-self: center;margin-right: 10px" class="center" >
@@ -151,7 +160,7 @@
                     <div style="align-self: center" style="margin-left: 10px">
                         <header class="normal">W </header>
                     </div>
-                    <div style="align-self: center; margin-left: 100px">
+                    <div style="align-self: center; margin-left: 50px">
                         <header class="normal">USAGE: </header>
                     </div>
                     <div style="align-self: center;margin-right: 10px" class="center" >
@@ -160,7 +169,16 @@
                     <div style="align-self: center" style="margin-left: 10px">
                         <header class="normal">hours </header>
                     </div>
-                    <i id="plush" class="fas fa-plus-square center fa-3x plush" style="align-self: center;margin-left: 100px" onclick="add();number()"></i>
+                    <div style="align-self: center; margin-left: 50px">
+                        <header class="normal">NUMBER: </header>
+                    </div>
+                    <div style="align-self: center;margin-right: 10px" class="center" >
+                        <input id="test" name="number" class="normal number" type="number" style="height: 65px; width: 70px;" min="1">
+                    </div>
+                    <div style="align-self: center" style="margin-left: 10px">
+                        <header class="normal">appliance(s) </header>
+                    </div>
+                    <i id="plush" class="fas fa-plus-square center fa-3x plush" style="align-self: center;margin-left: 50px" onclick="add();number()"></i>
                     <i id='minus' class="fas fa-minus-square center fa-3x minus" style="align-self: center;margin-left: 10px" onclick="delet();number()"></i>
                 </div>
             </form>
