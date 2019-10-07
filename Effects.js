@@ -2,7 +2,7 @@ var img_list =document.getElementsByClassName('img');
 var i=0;
 var k=1000;
 var expendables=["Television", "Lights", "Computer", "Fan", "Water Heater"];
-var saved_items=[{name:'Television',hours:3},{name:'Lights',hours:3}, {name:'Computer',hours:3},{name:'Fan',hours:3}, {name:'Water Heater',hours:3}];
+var saved_items=[{name:'Television',hours:1},{name:'Lights',hours:2}, {name:'Computer',hours:3},{name:'Air Condition',hours:4}, {name:'Water Heater',hours:0}];
 var save_txt="";
 var ap=[];
 
@@ -167,7 +167,7 @@ function calculate() {
     var list= JSON.parse(sessionStorage.getItem("list"));
     var days= JSON.parse(sessionStorage.getItem("days"));
     for (k=0;k<list.length; k++) {
-        kWh+=list[k].power*list[k].hours*list[k].number;
+        kWh+=list[k].power*list[k].hours*list[k].number*0.001;
     }
     kWh=kWh*days;
     window.sessionStorage.setItem("kWh",JSON.stringify(kWh));
@@ -202,6 +202,38 @@ function calculate() {
     money=Math.round(money);
     window.sessionStorage.setItem("money",JSON.stringify(money));
 }
+function money_cal(kWk) {
+    var money=0;
+    if (kWh<50 && kWh>0) {//1
+        money=kWh*1678;
+    } else if (kWh<=100 && kWh>=51){//2
+        money=50*1678;
+        money+=(kWh-50)*1734;
+    } else if (kWh<=200 && kWh>=101){//3
+        money=50*1678;
+        money+=50*1734;
+        money+=(kWh-100)*2014;
+    } else if (kWh<=300 && kWh>=201){//4
+        money=50*1678;
+        money+=50*1734;
+        money+=100*2014;
+        money+=(kWh-200)*2536;
+    } else if (kWh<=400 && kWh>=301) {//5
+        money=50*1678;
+        money+=50*1734;
+        money+=100*2014;
+        money+=100*2536;
+        money+=(kWh-300)*2834;
+    } else if (kWh>=401) {//6
+        money=50*1678;
+        money+=50*1734;
+        money+=100*2014;
+        money+=100*2536;
+        money+=100*2834;
+        money+=(kWh-400)*2927;
+    }
+    return money;
+}
 //ADD COMAS
 function thousands_separators(num){
     var num_parts = num.toString().split(".");
@@ -212,7 +244,7 @@ function thousands_separators(num){
 function savings() {
     var money= JSON.parse(sessionStorage.getItem("kWh"));
     var two=money;
-    two=money*0.815400000;
+    two=money*0.8649;
     window.sessionStorage.setItem("carbon",JSON.stringify(two));
     var three=document.getElementById('carbon');
     two=Math.round(two);
@@ -303,18 +335,18 @@ function sa(a){
                                 //IF THE INTENDENT NUMBER OF HOURS IS SMALLER THAN WHAT IS ABOUT THE BE DELETED
                                 //IF THE INTENDENT NUMBER OF HOURS IS LARGER THAN THE MINIMUN POWER DELETED
                                 var three=two[k].hours-(one/two[k].power);//HOURS LEFT AFTER REDUCTION
-                                save_txt+=JSON.stringify(ap[k]);
+                                save_txt+=JSON.stringify(ap[j]);
                                 save_txt+=" usage can be decreased to ";
-                                save_txt+=JSON.stringify(three);
-                                save_txt+= " hour(s)";
-                        } else if (two[k].hours-(one/two[k].power)<saved_items[h].hours && two[k].hours-(one/two[k].power)>0) {
-                            var three=two[k].hours-(one/two[k].power);//HOURS LEFT AFTER REDUCTION
-                            save_txt+=JSON.stringify(ap[h]);
+                                save_txt+=Math.round(JSON.stringify(three)*60);
+                                save_txt+= " minute(s). ";
+                        } else if (two[k].hours-(one/two[k].power)<saved_items[h].hours) {
+                            var three=saved_items[h].hours;//HOURS LEFT AFTER REDUCTION
+                            save_txt+=JSON.stringify(ap[j]);
                             save_txt+=" usage can be decreased to ";
-                            save_txt+=JSON.stringify(three);
-                            save_txt+= " hour(s), however, it may not be sufficient for your use. ";
-                        } else if (two[k].hours-(one/two[k].power)<0 &&two[k].hours-(one/two[k].power==0)) {
-                            save_txt+="";
+                            save_txt+=Math.round(JSON.stringify(three)*60);
+                            save_txt+= " minute(s)";
+                        } else {
+                            ap.shift();
                         }
                     
                         }
