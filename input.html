@@ -1,11 +1,12 @@
 <html>
     <head>
-        <meta charset="8">
+        <meta charset="utf-8">
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="Style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <title>INPUT</title>
-        <script src="Effects.js"></script>
+        <script src="Css.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Geostar|Geostar+Fill|Londrina+Shadow|Teko&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
@@ -18,7 +19,13 @@
                 <a  class="nav-icon" href="index.html" id="home" role="button" onmouseover="change_Colorr('home','blue')" onmouseout="change_Colorr('home','black')"><i class="fas fa-home fa-2x"></i></a>
                 <a class="nav-icon" id="input" href="input.html" role="button" onmouseover="change_Colorr('input','red')" onmouseout="change_Colorr('input','black')"><i class="fas fa-edit fa-2x"></i></a>
                 <a href="#" style="font-size: 20px;color:initial; color:rgb(0, 77, 152); font-style: italic" class="nav-icon heading">For your electric saving needs</a>
-
+                
+            </div>
+            <div style="position:fixed; right:50px" class="nav-icon google" onclick="signin()" id="gog">
+                <svg aria-hidden="true"  width="18" height="18" viewBox="0 0 18 18"><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></svg> Sign up using Google
+            </div>
+            <div style="position:fixed; right:50px;font-size: 20px;color:initial; color:rgb(0, 77, 152); font-style: italic">
+                <header id="acc_name" class="heading"> </header>
             </div>
         </div>
         <br>
@@ -28,8 +35,7 @@
         
 <!--INFROMATION-->
         <div class="heading center" style="align-self: flex-start; justify-content:center; font-size: 30px;">
-            <header id="number-appliances" style=" background-color: rgb(255, 219, 80);">1 APPLIANCE</header>
-            <header id="number-appliances" class="normal" style=" background-color: rgb(255, 219, 80); font-size: 20px">Before adding information, make sure that there are enough slots</header>
+            <header id="number-appliances" style=" background-color: rgb(255, 219, 80);">APPLIANCE</header>
 
         </div>
         <div style="align-content: flex-start; flex-direction:row;display: flex">
@@ -49,28 +55,26 @@
                             <header class="normal" style="align-self: center; margin-left: 30px">APPLIANCES: </header>
                         </div>
                         <select class="center button appliances" name="appliances" >
-                            <option >Blending </option>
-                            <option >Water Heater</option>
-                            <option >Cook Top</option>
-                            <option >Grill</option>
-                            <option >Rice Cooker</option>
-                            <option >Kitchen Hood</option>
-                            <option >Refrigerator</option>
-                            <option >Microwave</option>
-                            <option >Kettle</option>
-                            <option >Dish Waher</option>
-                            <option >Washing Machine </option>
-                            <option >Cloth Dryer</option>
-                            <option >Television</option>
-                            <option >CD player</option>
+                            <option >Air conditioner</option>
                             <option >Amplifier</option>
-                            <option >Hair Drier</option>
-                            <option >Air Condition</option>
-                            <option >Water Heater</option>
-                            <option >Toilet Air Extraction Fan</option>
-                            <option >Fan</option>
+                            <option >Blending</option>
+                            <option >CD Player</option>
+                            <option >Cloth Dryer</option>
                             <option >Computer</option>
+                            <option >Cook top</option>
+                            <option >Fan</option>
+                            <option >Grill</option>
+                            <option >Hair Dryer</option>
+                            <option >Kettle</option>
+                            <option >Kitchen Hood</option>
                             <option >Light</option>
+                            <option >Microwave</option>
+                            <option >Refrigerator</option>
+                            <option >Rice Cooker</option>
+                            <option >Toilet Air Extraction Fan</option>
+                            <option >Television</option>
+                            <option >Water Heater</option>
+                            <option >Washing Machine</option>
                             <option >Others</option>
                         </select>
                         <div style="align-self: center; margin-left: 10px">
@@ -101,7 +105,7 @@
                             <header class="normal">appliance(s) </header>
                         </div>
                         <i id="plush" class="fas fa-plus-square center fa-3x plush invert" style="align-self: center;margin-left: 50px" onclick="add();number()"></i>
-                        <i id='minus' class="fas fa-minus-square center fa-3x minus invert" style="align-self: center;margin-left: 10px" onclick="delet();number()"></i>
+                        <!-- <i id='minus' class="fas fa-minus-square center fa-3x minus invert" style="align-self: center;margin-left: 10px" onclick="delet();number()"></i> -->
                     </div>
                 </form>
                 </div>
@@ -130,29 +134,28 @@
                         <header class="normal"style="align-self: center; margin-left: 30px">APPLIANCES: </header>
                     </div>
                     <select class="center button  appliances" name="appliances">
-                            <option >Blending </option>
-                            <option >Water Heater</option>
-                            <option >Cook Top</option>
-                            <option >Grill</option>
-                            <option >Rice Cooker</option>
-                            <option >Kitchen Hood</option>
-                            <option >Refrigerator</option>
-                            <option >Microwave</option>
-                            <option >Kettle</option>
-                            <option >Dish Waher</option>
-                            <option >Washing Machine </option>
-                            <option >Cloth Dryer</option>
-                            <option >Television</option>
-                            <option >CD player</option>
+                            <option >Air conditioner</option>
                             <option >Amplifier</option>
-                            <option >Hair Drier</option>
-                            <option >Air Condition</option>
-                            <option >Water Heater</option>
-                            <option >Toilet Air Extraction Fan</option>
-                            <option >Fan</option>
+                            <option >Blending</option>
+                            <option >CD Player</option>
+                            <option >Cloth Dryer</option>
                             <option >Computer</option>
+                            <option >Cook top</option>
+                            <option >Fan</option>
+                            <option >Grill</option>
+                            <option >Hair Dryer</option>
+                            <option >Kettle</option>
+                            <option >Kitchen Hood</option>
                             <option >Light</option>
+                            <option >Microwave</option>
+                            <option >Refrigerator</option>
+                            <option >Rice Cooker</option>
+                            <option >Toilet Air Extraction Fan</option>
+                            <option >Television</option>
+                            <option >Water Heater</option>
+                            <option >Washing Machine</option>
                             <option >Others</option>
+                            
 
                     </select>
                     <div style="align-self: center; margin-left: 10px">
@@ -183,12 +186,39 @@
                         <header class="normal">appliance(s) </header>
                     </div>
                     <i id="plush" class="fas fa-plus-square center fa-3x plush" style="align-self: center;margin-left: 50px" onclick="add();number()"></i>
-                    <i id='minus' class="fas fa-minus-square center fa-3x minus" style="align-self: center;margin-left: 10px" onclick="delet();number()"></i>
+                    <!-- <i id='minus' class="fas fa-minus-square center fa-3x minus" style="align-self: center;margin-left: 10px" onclick="delet();number()"></i> -->
                 </div>
             </form>
             
             
         </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyCYlOb0YfI5G9O7t729bKz0o9nDsppKRbE",
+    authDomain: "electriquiped.firebaseapp.com",
+    databaseURL: "https://electriquiped.firebaseio.com",
+    projectId: "electriquiped",
+    storageBucket: "",
+    messagingSenderId: "958673085236",
+    appId: "1:958673085236:web:9b41b26154966d47febb61",
+    measurementId: "G-N4LZRMR68Z"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+
+        <script src="Effects.js"></script>
+
     </body>
     <footer>
 <!--FOOTER-->

@@ -180,3 +180,22 @@ button:visited {
 body {
     background-color: rgb(104, 177, 251,0.3);
 }
+.google {
+    border-color: #adb3b9;
+    box-shadow: 0 0 0 0 rgba(145,153,161,0);
+    position: relative;
+    display: inline-block;
+    padding: .8em;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15384615;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color:whitesmoke;
+
+}
